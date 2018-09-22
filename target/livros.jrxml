@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="livros" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6a748550-6405-4134-91c6-bcc41e27827b">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     livro.`id` AS livro_id,
+     livro.`anoEdicao` AS livro_anoEdicao,
+     livro.`autor` AS livro_autor,
+     livro.`livro` AS livro_livro,
+     livro.`nota` AS livro_nota,
+     livro.`dataCadastro` AS livro_dataCadastro
+FROM
+     `livro` livro]]>
+	</queryString>
+	<field name="livro_id" class="java.lang.Integer"/>
+	<field name="livro_anoEdicao" class="java.lang.String"/>
+	<field name="livro_autor" class="java.lang.String"/>
+	<field name="livro_livro" class="java.lang.String"/>
+	<field name="livro_nota" class="java.lang.Integer"/>
+	<field name="livro_dataCadastro" class="java.sql.Date"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="1e9069ab-96de-4841-9168-174dd5c0ecfd"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="8c65905a-bf96-4b9f-8ee4-2acf8252b4bf"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Livros]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="c9d9e548-be40-48f8-9255-8a5e6f021a7d"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relátorio de livros]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="31">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="40cf1ccc-1db7-4b9d-83fd-ecb3827b3286"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b063f843-6dce-4357-a886-042d375c8152"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="72" y="0" width="112" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="048f029a-e8ac-4745-86be-c82ff9654044"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ano Edição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="0" width="72" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="08ed6fa5-6b7a-4e13-b320-b703b2ef55d9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Autor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="253" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="7bb8f2bd-5167-4adc-80f7-a505d9a2d4ff"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Livro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="328" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="028480e7-7b93-409f-b886-395dec90bf3d"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="0" width="155" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3879a108-6032-4368-bc09-83945cef1cc1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Cadastro]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="f71f44c6-e1a5-448b-b641-abc799773973"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="16" y="0" width="84" height="20" uuid="b0afd7ee-e02b-449d-81f6-db5d8ec1b652"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="0" width="63" height="20" uuid="7c5da0da-fbab-4622-8fc6-b7df9f55ded8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_anoEdicao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="196" y="0" width="92" height="20" uuid="7ef40da1-c981-440a-b60d-936de4b94620"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_autor}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="281" y="0" width="92" height="20" uuid="f51745b0-5b7f-4ee8-a915-53c438841584"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_livro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="452" y="0" width="102" height="20" uuid="6dd49629-c266-4669-ab1d-9fac2fb50c56"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_dataCadastro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="371" y="0" width="92" height="20" uuid="19258435-0a94-4055-8c6c-548379bf2137"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_nota}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="a52040fc-7e36-4288-9bc8-6f48688502fa"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="f69e5c2f-cf1e-47cd-9f79-032445b2c3fc"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="70e72c8e-6a40-4d72-aa12-9a367e7e860b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
