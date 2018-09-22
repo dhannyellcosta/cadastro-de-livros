@@ -11,7 +11,7 @@ import javax.persistence.Persistence;
 
 /**
  *
- * @author 588095982
+ * @author Daniel Oliveira
  */
 public class JPAUtil {
 

@@ -38,7 +38,7 @@ import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
- * @author 588095982
+ * @author Daniel Oliveira
  */
 public class Principal extends javax.swing.JFrame {
 

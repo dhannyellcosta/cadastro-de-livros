@@ -12,7 +12,7 @@ import javax.persistence.EntityManager;
 
 /**
  *
- * @author 588095982
+ * @author Daniel Oliveira
  */
 public class LivroDAO {
 

@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author 588095982
+ * @author Daniel Oliveira
  */
 @Entity
 public class Livro {
