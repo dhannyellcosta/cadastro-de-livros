@@ -53,19 +53,21 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        // gera a tabela no formulário
         getLivros();
         event e = new event();
         jSlider.addChangeListener(e);
         btnNota.setText(nota.toString());
     }
 
-    // método de operação buscar todos os livros -----------------------------------------------------------
+    // método que gera a tabela no formulário -----------------------------------------------------------
     public void getLivros() {
 
+        // limpa as linhas da tabela
         ((DefaultTableModel) tabelaLivros.getModel()).setNumRows(0);
         DefaultTableModel modelo = (DefaultTableModel) tabelaLivros.getModel();
 
-        // retorna a lista de livro do banco
+        // retorna a lista de livros do banco
         List<Livro> livros = new LivroDAO().getLivros();
 
         // adiciona as lihas na tabela
@@ -427,9 +429,8 @@ public class Principal extends javax.swing.JFrame {
             // limpa o formulário de cadastro de livros
             limparFormularioCadastro();
             jSlider.setValue(5);
-            btnAlterar.setEnabled(false);
-            btnExlcuir.setEnabled(false);
-            btnGravar.setEnabled(true);
+            // atruibui caracteristicas aos botôes em tela
+            cancelar();
 
             // busca todos os livros no banco
             getLivros();
@@ -476,6 +477,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         // limpa o formulário de cadastro de livros
         limparFormularioCadastro();
+        // atruibui caracteristicas aos botôes em tela
         cancelar();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
@@ -528,6 +530,7 @@ public class Principal extends javax.swing.JFrame {
     // método para gerar o relatóro de livros ---------------------------------------------------------------------
     private void btnRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRelatorioActionPerformed
 
+        // retorna a lista de livros do banco
         List<Livro> livros = new LivroDAO().getLivros();
 
         List<Map<String, ?>> dataSource = new ArrayList<>();
@@ -560,7 +563,9 @@ public class Principal extends javax.swing.JFrame {
     // método utilizado para gerar 10 livros ---------------------------------------------------------------------
     private void btnGerarDadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarDadosActionPerformed
 
+        // gerar a inserção de 10 livros no banco
         new LivroDAO().gerarDados();
+        // busca todos os livros no banco
         getLivros();
     }//GEN-LAST:event_btnGerarDadosActionPerformed
 
